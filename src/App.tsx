@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useReducer, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import {
   GameplaySignalsprintLite,
   GameSettingsSignalsprintLite,
@@ -11,6 +11,9 @@ import {
   signalSprintReducer,
   type SignalSprintAction,
 } from './features/signalsprint-lite/signalsprint-lite.store';
+import { act_pause_game } from './features/surf-gameplay/act_pause_game';
+import { act_restart_game } from './features/surf-gameplay/act_restart_game';
+import { act_start_game } from './features/surf-gameplay/act_start_game';
 import { installSignalSprintLiteBridge, type SignalSprintBridgeActions } from './test/bridge';
 
 const TICK_MS = 220;
@@ -18,6 +21,7 @@ const TICK_MS = 220;
 export default function App() {
   const initialState = useMemo(() => loadSignalSprintState().state, []);
   const [state, dispatch] = useReducer(signalSprintReducer, initialState);
+  const [actionFeedback, setActionFeedback] = useState({ label: 'READY', count: 0 });
   const stateRef = useRef(state);
 
   useEffect(() => {
@@ -28,6 +32,14 @@ export default function App() {
     dispatch(action);
   }, []);
 
+  const runWithFeedback = useCallback(
+    (label: string, action: () => void) => {
+      action();
+      setActionFeedback((current) => ({ label, count: current.count + 1 }));
+    },
+    [],
+  );
+
   const bridgeActions = useMemo<SignalSprintBridgeActions>(
     () => ({
       advance: () => dispatchAction({ type: 'tick' }),
@@ -35,8 +47,8 @@ export default function App() {
       goToSettings: () => dispatchAction({ type: 'navigate', screen: 'settings' }),
       moveLeft: () => dispatchAction({ type: 'move', direction: -1 }),
       moveRight: () => dispatchAction({ type: 'move', direction: 1 }),
-      pause: () => dispatchAction({ type: 'pause' }),
-      restart: () => dispatchAction({ type: 'restart' }),
+      pause: () => act_pause_game(dispatchAction),
+      restart: () => act_restart_game(dispatchAction),
       resume: () => dispatchAction({ type: 'resume' }),
       sprint: () => dispatchAction({ type: 'sprint' }),
       stopSprint: () => dispatchAction({ type: 'stopSprint' }),
@@ -145,18 +157,18 @@ export default function App() {
     () => ({
       'pause-1': bridgeActions.pause,
       'settings-2': bridgeActions.goToSettings,
-      'race-3': bridgeActions.goToGameplay,
-      'garage-4': bridgeActions.goToGameplay,
-      'leaderboard-5': bridgeActions.goToGameplay,
+      'race-3': () => runWithFeedback('RACE READY', () => act_start_game(dispatchAction)),
+      'garage-4': () => runWithFeedback('GARAGE QUEUED', bridgeActions.goToGameplay),
+      'leaderboard-5': () => runWithFeedback('LEADERBOARD QUEUED', bridgeActions.goToGameplay),
       'config-6': bridgeActions.goToSettings,
-      'go-live-7': bridgeActions.resume,
-      'sprint-8': bridgeActions.sprint,
-      'upgrades-9': bridgeActions.goToGameplay,
-      'network-10': bridgeActions.goToGameplay,
+      'go-live-7': () => runWithFeedback('SIGNAL LIVE', () => act_start_game(dispatchAction)),
+      'sprint-8': () => runWithFeedback('SPRINT FIRED', bridgeActions.sprint),
+      'upgrades-9': () => runWithFeedback('UPGRADES QUEUED', bridgeActions.goToGameplay),
+      'network-10': () => runWithFeedback('NETWORK QUEUED', bridgeActions.goToGameplay),
       'resume-11': bridgeActions.resume,
       'restart-12': bridgeActions.restart,
     }),
-    [bridgeActions],
+    [bridgeActions, dispatchAction, runWithFeedback],
   );
 
   const settingsActions = useMemo<Partial<Record<GameSettingsSignalsprintLiteActionId, () => void>>>(
@@ -168,7 +180,11 @@ export default function App() {
   );
 
   return (
-    <div data-setfarm-root="signalsprint-lite" data-testid="setfarm-app-root">
+    <div
+      className="min-h-screen"
+      data-setfarm-root="signalsprint-lite"
+      data-testid="setfarm-app-root"
+    >
       {state.activeScreen === 'settings' ? (
         <GameSettingsSignalsprintLite actions={settingsActions} />
       ) : (
@@ -182,6 +198,14 @@ export default function App() {
           {state.lastError}
         </div>
       ) : null}
+      <div
+        className="fixed right-4 bottom-24 z-[60] rounded border border-primary/30 bg-surface/85 px-3 py-2 font-label-sm text-label-sm text-primary shadow-[0_0_15px_rgba(47,217,244,0.25)] md:bottom-4"
+        role="status"
+        aria-live="polite"
+        data-testid="gameplay-action-feedback"
+      >
+        {actionFeedback.label} #{actionFeedback.count}
+      </div>
     </div>
   );
 }
