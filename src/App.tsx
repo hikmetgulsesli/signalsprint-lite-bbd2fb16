@@ -65,6 +65,82 @@ export default function App() {
     [bridgeActions],
   );
 
+  useEffect(() => {
+    const shouldIgnoreKeyEvent = (event: KeyboardEvent) => {
+      const target = event.target;
+
+      if (
+        target instanceof HTMLInputElement ||
+        target instanceof HTMLTextAreaElement ||
+        target instanceof HTMLSelectElement ||
+        (target instanceof HTMLElement && target.isContentEditable)
+      ) {
+        return true;
+      }
+
+      return stateRef.current.activeScreen !== 'gameplay';
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (shouldIgnoreKeyEvent(event)) {
+        return;
+      }
+
+      switch (event.key) {
+        case 'ArrowLeft':
+        case 'a':
+        case 'A':
+          event.preventDefault();
+          dispatchAction({ type: 'move', direction: -1 });
+          break;
+        case 'ArrowRight':
+        case 'd':
+        case 'D':
+          event.preventDefault();
+          dispatchAction({ type: 'move', direction: 1 });
+          break;
+        case ' ':
+        case 'ArrowUp':
+        case 'w':
+        case 'W':
+          event.preventDefault();
+          dispatchAction({ type: 'sprint' });
+          break;
+        case 'p':
+        case 'P':
+          event.preventDefault();
+          dispatchAction({ type: stateRef.current.paused ? 'resume' : 'pause' });
+          break;
+        case 'r':
+        case 'R':
+          event.preventDefault();
+          dispatchAction({ type: 'restart' });
+          break;
+        default:
+          break;
+      }
+    };
+
+    const handleKeyUp = (event: KeyboardEvent) => {
+      if (shouldIgnoreKeyEvent(event)) {
+        return;
+      }
+
+      if (event.key === ' ' || event.key === 'ArrowUp' || event.key === 'w' || event.key === 'W') {
+        event.preventDefault();
+        dispatchAction({ type: 'stopSprint' });
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keyup', handleKeyUp);
+    };
+  }, [dispatchAction]);
+
   const gameplayActions = useMemo<Partial<Record<GameplaySignalsprintLiteActionId, () => void>>>(
     () => ({
       'pause-1': bridgeActions.pause,
