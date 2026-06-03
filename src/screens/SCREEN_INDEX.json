@@ -1,0 +1,108 @@
+[
+  {
+    "screenId": "40ae98e29f2244eaa9178980a4267df9",
+    "title": "Game Settings - SignalSprint Lite",
+    "componentName": "GameSettingsSignalsprintLite",
+    "file": "src/screens/GameSettingsSignalsprintLite.tsx",
+    "buttons": 2,
+    "inputs": 3,
+    "links": 0,
+    "actions": [
+      {
+        "id": "save-changes-1",
+        "kind": "button",
+        "label": "Save Changes",
+        "index": 0
+      },
+      {
+        "id": "back-to-game-2",
+        "kind": "button",
+        "label": "Back to Game",
+        "index": 1
+      }
+    ]
+  },
+  {
+    "screenId": "0227d11308b047af9448cca41bdad98b",
+    "title": "Gameplay - SignalSprint Lite",
+    "componentName": "GameplaySignalsprintLite",
+    "file": "src/screens/GameplaySignalsprintLite.tsx",
+    "buttons": 12,
+    "inputs": 0,
+    "links": 0,
+    "actions": [
+      {
+        "id": "pause-1",
+        "kind": "button",
+        "label": "Pause",
+        "index": 0
+      },
+      {
+        "id": "settings-2",
+        "kind": "button",
+        "label": "Settings",
+        "index": 1
+      },
+      {
+        "id": "race-3",
+        "kind": "button",
+        "label": "Race",
+        "index": 2
+      },
+      {
+        "id": "garage-4",
+        "kind": "button",
+        "label": "Garage",
+        "index": 3
+      },
+      {
+        "id": "leaderboard-5",
+        "kind": "button",
+        "label": "Leaderboard",
+        "index": 4
+      },
+      {
+        "id": "config-6",
+        "kind": "button",
+        "label": "Config",
+        "index": 5
+      },
+      {
+        "id": "go-live-7",
+        "kind": "button",
+        "label": "GO_LIVE",
+        "index": 6
+      },
+      {
+        "id": "sprint-8",
+        "kind": "button",
+        "label": "Sprint",
+        "index": 7
+      },
+      {
+        "id": "upgrades-9",
+        "kind": "button",
+        "label": "Upgrades",
+        "index": 8
+      },
+      {
+        "id": "network-10",
+        "kind": "button",
+        "label": "Network",
+        "index": 9
+      },
+      {
+        "id": "resume-11",
+        "kind": "button",
+        "label": "RESUME",
+        "index": 10
+      },
+      {
+        "id": "restart-12",
+        "kind": "button",
+        "label": "RESTART",
+        "index": 11
+      }
+    ]
+  }
+]
