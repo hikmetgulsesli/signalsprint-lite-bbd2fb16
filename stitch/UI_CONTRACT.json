@@ -1,0 +1,209 @@
+[
+  {
+    "screenId": "40ae98e29f2244eaa9178980a4267df9",
+    "screenTitle": "Game Settings - SignalSprint Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "Save Changes",
+        "line": 223
+      },
+      {
+        "type": "button",
+        "label": "Back to Game",
+        "line": 226
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 170
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 188
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 198
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Save Changes",
+        "line": 223
+      },
+      {
+        "type": "button",
+        "label": "Back to Game",
+        "line": 226
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 170
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 188
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 198
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 5,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "0227d11308b047af9448cca41bdad98b",
+    "screenTitle": "Gameplay - SignalSprint Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 191
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 194
+      },
+      {
+        "type": "button",
+        "label": "Race",
+        "line": 209
+      },
+      {
+        "type": "button",
+        "label": "Garage",
+        "line": 213
+      },
+      {
+        "type": "button",
+        "label": "leaderboard",
+        "line": 217
+      },
+      {
+        "type": "button",
+        "label": "Config",
+        "line": 221
+      },
+      {
+        "type": "button",
+        "label": "GO_LIVE",
+        "line": 226
+      },
+      {
+        "type": "button",
+        "label": "Sprint",
+        "line": 232
+      },
+      {
+        "type": "button",
+        "label": "Upgrades",
+        "line": 236
+      },
+      {
+        "type": "button",
+        "label": "Network",
+        "line": 240
+      },
+      {
+        "type": "button",
+        "label": "RESUME",
+        "line": 302
+      },
+      {
+        "type": "button",
+        "label": "RESTART",
+        "line": 306
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 191
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 194
+      },
+      {
+        "type": "button",
+        "label": "Race",
+        "line": 209
+      },
+      {
+        "type": "button",
+        "label": "Garage",
+        "line": 213
+      },
+      {
+        "type": "button",
+        "label": "leaderboard",
+        "line": 217
+      },
+      {
+        "type": "button",
+        "label": "Config",
+        "line": 221
+      },
+      {
+        "type": "button",
+        "label": "GO_LIVE",
+        "line": 226
+      },
+      {
+        "type": "button",
+        "label": "Sprint",
+        "line": 232
+      },
+      {
+        "type": "button",
+        "label": "Upgrades",
+        "line": 236
+      },
+      {
+        "type": "button",
+        "label": "Network",
+        "line": 240
+      },
+      {
+        "type": "button",
+        "label": "RESUME",
+        "line": 302
+      },
+      {
+        "type": "button",
+        "label": "RESTART",
+        "line": 306
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 12,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
