@@ -180,7 +180,11 @@ export default function App() {
   );
 
   return (
-    <div data-setfarm-root="signalsprint-lite" data-testid="setfarm-app-root">
+    <div
+      className="min-h-screen"
+      data-setfarm-root="signalsprint-lite"
+      data-testid="setfarm-app-root"
+    >
       {state.activeScreen === 'settings' ? (
         <GameSettingsSignalsprintLite actions={settingsActions} />
       ) : (
