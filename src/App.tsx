@@ -11,6 +11,9 @@ import {
   signalSprintReducer,
   type SignalSprintAction,
 } from './features/signalsprint-lite/signalsprint-lite.store';
+import { act_pause_game } from './features/surf-gameplay/act_pause_game';
+import { act_restart_game } from './features/surf-gameplay/act_restart_game';
+import { act_start_game } from './features/surf-gameplay/act_start_game';
 import { installSignalSprintLiteBridge, type SignalSprintBridgeActions } from './test/bridge';
 
 const TICK_MS = 220;
@@ -35,8 +38,8 @@ export default function App() {
       goToSettings: () => dispatchAction({ type: 'navigate', screen: 'settings' }),
       moveLeft: () => dispatchAction({ type: 'move', direction: -1 }),
       moveRight: () => dispatchAction({ type: 'move', direction: 1 }),
-      pause: () => dispatchAction({ type: 'pause' }),
-      restart: () => dispatchAction({ type: 'restart' }),
+      pause: () => act_pause_game(dispatchAction),
+      restart: () => act_restart_game(dispatchAction),
       resume: () => dispatchAction({ type: 'resume' }),
       sprint: () => dispatchAction({ type: 'sprint' }),
       stopSprint: () => dispatchAction({ type: 'stopSprint' }),
@@ -145,18 +148,18 @@ export default function App() {
     () => ({
       'pause-1': bridgeActions.pause,
       'settings-2': bridgeActions.goToSettings,
-      'race-3': bridgeActions.goToGameplay,
+      'race-3': () => act_start_game(dispatchAction),
       'garage-4': bridgeActions.goToGameplay,
       'leaderboard-5': bridgeActions.goToGameplay,
       'config-6': bridgeActions.goToSettings,
-      'go-live-7': bridgeActions.resume,
+      'go-live-7': () => act_start_game(dispatchAction),
       'sprint-8': bridgeActions.sprint,
       'upgrades-9': bridgeActions.goToGameplay,
       'network-10': bridgeActions.goToGameplay,
       'resume-11': bridgeActions.resume,
       'restart-12': bridgeActions.restart,
     }),
-    [bridgeActions],
+    [bridgeActions, dispatchAction],
   );
 
   const settingsActions = useMemo<Partial<Record<GameSettingsSignalsprintLiteActionId, () => void>>>(

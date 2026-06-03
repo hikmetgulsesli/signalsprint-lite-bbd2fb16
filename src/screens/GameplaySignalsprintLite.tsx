@@ -18,8 +18,18 @@ export interface GameplaySignalsprintLiteProps {
 
 }
 
+function clampRuntimePercent(value: number | undefined, fallback: number) {
+  return Math.max(0, Math.min(100, Number.isFinite(value) ? Number(value) : fallback));
+}
+
 export function GameplaySignalsprintLite({ actions, runtime }: GameplaySignalsprintLiteProps) {
-  void runtime;
+  const score = runtime?.score ?? 0;
+  const scoreText = new Intl.NumberFormat('en-US').format(score);
+  const energy = clampRuntimePercent(runtime?.energy, 85);
+  const lives = Math.max(0, runtime?.lives ?? 3);
+  const level = Math.max(1, Math.floor(score / 250) + 1);
+  const isPaused = runtime?.paused ?? true;
+
   return (
     <>
       {/* TopAppBar Component (from JSON) */}
@@ -89,23 +99,23 @@ export function GameplaySignalsprintLite({ actions, runtime }: GameplaySignalspr
       <div className="glass-panel p-panel-padding rounded border-l-4 border-l-secondary flex flex-col gap-1 w-48">
       <div className="flex justify-between items-center">
       <span className="font-stat-label text-stat-label text-outline tracking-wider">SCORE</span>
-      <span className="font-label-sm text-label-sm text-outline-variant">V.2.4</span>
+      <span className="font-label-sm text-label-sm text-outline-variant">LIVES {lives}</span>
       </div>
-      <div className="font-stat-value text-stat-value text-primary glow-text-primary">24,500</div>
+      <div className="font-stat-value text-stat-value text-primary glow-text-primary">{scoreText}</div>
       <div className="text-tertiary font-stat-label text-stat-label mt-1 flex items-center gap-1">
       <Zap className="text-sm" aria-hidden={true} focusable="false" />
-                x5 MULTIPLIER
+                x{Math.max(1, level)} MULTIPLIER
               </div>
       </div>
       {/* Level & Energy */}
       <div className="glass-panel p-panel-padding rounded flex flex-col gap-3 w-64 items-end">
       <div className="flex justify-between items-center w-full">
-      <span className="font-stat-label text-stat-label text-outline tracking-wider">LEVEL 3</span>
-      <span className="font-stat-label text-stat-label text-primary">OVERDRIVE READY</span>
+      <span className="font-stat-label text-stat-label text-outline tracking-wider">LEVEL {level}</span>
+      <span className="font-stat-label text-stat-label text-primary">{energy > 60 ? 'OVERDRIVE READY' : 'RECHARGING'}</span>
       </div>
       {/* Energy Bar */}
       <div className="w-full h-2 bg-surface-container rounded-full overflow-hidden border border-white/10">
-      <div className="h-full bg-secondary w-[85%] glow-secondary relative">
+      <div className="h-full bg-secondary w-[85%] glow-secondary relative" style={{ width: `${energy}%` }}>
       <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
       </div>
       </div>
@@ -132,9 +142,10 @@ export function GameplaySignalsprintLite({ actions, runtime }: GameplaySignalspr
       <div className="w-12 h-12 bg-primary rounded-full blur-[2px] opacity-80 glow-primary transform translate-x-24 translate-y-24"></div>
       </div>
       {/* Visual Feedback Tags */}
-      <div className="absolute top-1/2 left-1/4 font-stat-value text-stat-value text-tertiary animate-bounce glow-text-primary">COMBO!</div>
-      <div className="absolute top-2/3 right-1/4 font-stat-value text-stat-value text-error opacity-70">MISS</div>
+      <div className="absolute top-1/2 left-1/4 font-stat-value text-stat-value text-tertiary animate-bounce glow-text-primary">{score > 0 ? 'COMBO!' : 'READY'}</div>
+      <div className="absolute top-2/3 right-1/4 font-stat-value text-stat-value text-error opacity-70">{lives < 3 ? 'MISS' : ''}</div>
       {/* Controls Overlay (When Paused/Not Running) */}
+      {isPaused ? (
       <div className="absolute inset-0 bg-surface/80 backdrop-blur-md flex flex-col items-center justify-center gap-6 z-20">
       <h2 className="font-display-lg text-display-lg text-primary glow-text-primary tracking-tighter italic">SYSTEM PAUSED</h2>
       <div className="flex flex-col gap-4 w-64">
@@ -149,6 +160,7 @@ export function GameplaySignalsprintLite({ actions, runtime }: GameplaySignalspr
       </div>
       <p className="font-label-sm text-label-sm text-outline-variant mt-4">PRESS [ESC] TO RESUME</p>
       </div>
+      ) : null}
       </div>
       </main>
     </>
