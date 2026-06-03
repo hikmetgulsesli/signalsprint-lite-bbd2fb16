@@ -1,0 +1,775 @@
+{
+  "generatedAt": "2026-06-03T11:53:55.815Z",
+  "screenCount": 2,
+  "screens": {
+    "0227d11308b047af9448cca41bdad98b": {
+      "screenId": "0227d11308b047af9448cca41bdad98b",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "fixed",
+            "top-0",
+            "left-0",
+            "w-full",
+            "z-50",
+            "flex",
+            "justify-between",
+            "items-center",
+            "px-hud-gutter",
+            "h-16"
+          ],
+          "childCount": 3
+        },
+        {
+          "tag": "aside",
+          "layout": "flex-col",
+          "classes": [
+            "fixed",
+            "left-0",
+            "top-0",
+            "h-full",
+            "z-40",
+            "flex",
+            "flex-col",
+            "p-panel-padding",
+            "bg-surface/80",
+            "backdrop-blur-md"
+          ],
+          "childCount": 4
+        },
+        {
+          "tag": "nav",
+          "layout": "flex-row",
+          "classes": [
+            "fixed",
+            "bottom-0",
+            "left-0",
+            "w-full",
+            "z-50",
+            "flex",
+            "justify-around",
+            "items-center",
+            "px-4",
+            "pb-4"
+          ],
+          "childCount": 0
+        },
+        {
+          "tag": "main",
+          "layout": "flex-row",
+          "classes": [
+            "flex-1",
+            "relative",
+            "flex",
+            "items-center",
+            "justify-center",
+            "pt-16",
+            "md:pl-64",
+            "pb-20",
+            "md:pb-0",
+            "overflow-hidden"
+          ],
+          "childCount": 23
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "pause",
+          "classes": [
+            "text-outline",
+            "hover:bg-primary/20",
+            "hover:text-primary",
+            "transition-all",
+            "duration-300",
+            "active:scale-95",
+            "p-2",
+            "rounded-full",
+            "flex",
+            "items-center",
+            "justify-center"
+          ],
+          "icon": "pause",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "classes": [
+            "text-outline",
+            "hover:bg-primary/20",
+            "hover:text-primary",
+            "transition-all",
+            "duration-300",
+            "active:scale-95",
+            "p-2",
+            "rounded-full",
+            "flex",
+            "items-center",
+            "justify-center"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/settings",
+          "expectedRoute": "/settings",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "Race",
+          "classes": [
+            "flex",
+            "items-center",
+            "gap-4",
+            "p-3",
+            "font-label-sm",
+            "text-label-sm",
+            "uppercase",
+            "tracking-widest",
+            "bg-secondary-container",
+            "text-on-secondary-container",
+            "border-l-4",
+            "border-secondary",
+            "hover:text-primary",
+            "transition-colors",
+            "active:translate-x-1",
+            "duration-150"
+          ],
+          "icon": "speed",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Garage",
+          "classes": [
+            "flex",
+            "items-center",
+            "gap-4",
+            "p-3",
+            "font-label-sm",
+            "text-label-sm",
+            "uppercase",
+            "tracking-widest",
+            "text-on-surface-variant",
+            "hover:bg-surface-variant/50",
+            "hover:text-primary",
+            "transition-colors",
+            "active:translate-x-1",
+            "duration-150"
+          ],
+          "icon": "directions_car",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "leaderboard",
+          "classes": [
+            "flex",
+            "items-center",
+            "gap-4",
+            "p-3",
+            "font-label-sm",
+            "text-label-sm",
+            "uppercase",
+            "tracking-widest",
+            "text-on-surface-variant",
+            "hover:bg-surface-variant/50",
+            "hover:text-primary",
+            "transition-colors",
+            "active:translate-x-1",
+            "duration-150"
+          ],
+          "icon": "leaderboard",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Config",
+          "classes": [
+            "flex",
+            "items-center",
+            "gap-4",
+            "p-3",
+            "font-label-sm",
+            "text-label-sm",
+            "uppercase",
+            "tracking-widest",
+            "text-on-surface-variant",
+            "hover:bg-surface-variant/50",
+            "hover:text-primary",
+            "transition-colors",
+            "active:translate-x-1",
+            "duration-150"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/settings",
+          "expectedRoute": "/settings",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "GO_LIVE",
+          "classes": [
+            "mt-auto",
+            "w-full",
+            "py-3",
+            "bg-primary",
+            "text-on-primary",
+            "font-hud-header",
+            "text-hud-header",
+            "hover:bg-primary-container",
+            "transition-colors",
+            "glow-primary"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Sprint",
+          "classes": [
+            "flex",
+            "flex-col",
+            "items-center",
+            "justify-center",
+            "bg-primary/20",
+            "text-primary",
+            "rounded-xl",
+            "p-2",
+            "drop-shadow-[0_0_5px_rgba(47,217,244,0.6)]",
+            "font-label-sm",
+            "text-label-sm",
+            "active:scale-90",
+            "duration-200"
+          ],
+          "icon": "bolt",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Upgrades",
+          "classes": [
+            "flex",
+            "flex-col",
+            "items-center",
+            "justify-center",
+            "text-outline",
+            "p-2",
+            "hover:text-primary-container",
+            "font-label-sm",
+            "text-label-sm",
+            "active:scale-90",
+            "duration-200"
+          ],
+          "icon": "build",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Network",
+          "classes": [
+            "flex",
+            "flex-col",
+            "items-center",
+            "justify-center",
+            "text-outline",
+            "p-2",
+            "hover:text-primary-container",
+            "font-label-sm",
+            "text-label-sm",
+            "active:scale-90",
+            "duration-200"
+          ],
+          "icon": "hub",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "RESUME",
+          "classes": [
+            "w-full",
+            "py-4",
+            "border",
+            "border-primary",
+            "bg-primary/10",
+            "text-primary",
+            "font-hud-header",
+            "text-hud-header",
+            "hover:bg-primary/20",
+            "hover:glow-primary",
+            "transition-all",
+            "duration-300",
+            "rounded",
+            "uppercase",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-2"
+          ],
+          "icon": "play_arrow",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "RESTART",
+          "classes": [
+            "w-full",
+            "py-4",
+            "border",
+            "border-outline",
+            "text-outline",
+            "font-hud-header",
+            "text-hud-header",
+            "hover:bg-surface-variant",
+            "hover:text-on-surface-variant",
+            "transition-all",
+            "duration-300",
+            "rounded",
+            "uppercase",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-2"
+          ],
+          "icon": "refresh",
+          "action": "reset",
+          "expectedBehavior": "reset visible value/state, with confirmation if destructive"
+        }
+      ],
+      "inputs": [],
+      "navLinks": [],
+      "cards": [],
+      "icons": [
+        "pause",
+        "settings",
+        "person",
+        "speed",
+        "directions_car",
+        "leaderboard",
+        "bolt",
+        "build",
+        "hub",
+        "flash_on",
+        "keyboard_arrow_down",
+        "play_arrow",
+        "refresh"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "on-tertiary": "#1f3700",
+        "on-background": "#dae2fd",
+        "tertiary": "#a7f242",
+        "on-surface-variant": "#bbc9cd",
+        "primary-fixed-dim": "#2fd9f4",
+        "on-tertiary-fixed": "#102000",
+        "inverse-surface": "#dae2fd",
+        "on-primary": "#00363e",
+        "surface": "#0b1326",
+        "tertiary-fixed": "#acf847",
+        "outline": "#859397",
+        "on-tertiary-fixed-variant": "#304f00",
+        "on-secondary-fixed": "#3d0026",
+        "error-container": "#93000a",
+        "surface-container-high": "#222a3d",
+        "on-error-container": "#ffdad6",
+        "surface-container-highest": "#2d3449",
+        "error": "#ffb4ab",
+        "primary": "#8aebff",
+        "on-secondary-container": "#ff93c8",
+        "surface-container-lowest": "#060e20",
+        "secondary-fixed-dim": "#ffafd3",
+        "on-surface": "#dae2fd",
+        "secondary": "#ffafd3",
+        "tertiary-container": "#8cd523",
+        "on-error": "#690005",
+        "on-primary-fixed": "#001f25",
+        "on-secondary": "#620040",
+        "inverse-on-surface": "#283044",
+        "secondary-fixed": "#ffd8e7",
+        "on-primary-fixed-variant": "#004e5a",
+        "background": "#0b1326",
+        "tertiary-fixed-dim": "#91db2a",
+        "primary-fixed": "#a2eeff",
+        "surface-dim": "#0b1326",
+        "on-tertiary-container": "#355800",
+        "outline-variant": "#3c494c",
+        "on-primary-container": "#005763",
+        "primary-container": "#22d3ee",
+        "surface-container": "#171f33",
+        "surface-tint": "#2fd9f4",
+        "secondary-container": "#85145a",
+        "on-secondary-fixed-variant": "#85145a",
+        "surface-container-low": "#131b2e",
+        "surface-bright": "#31394d",
+        "inverse-primary": "#006877",
+        "surface-variant": "#2d3449"
+      },
+      "fonts": [
+        "Inter",
+        "JetBrains Mono",
+        "Material Symbols Outlined"
+      ],
+      "layoutHints": {
+        "flexDirection": "col",
+        "gap": "4"
+      },
+      "behaviorContract": [
+        {
+          "kind": "button",
+          "label": "pause",
+          "icon": "pause",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "icon": "settings",
+          "action": "navigate",
+          "route": "/settings",
+          "expectedBehavior": "navigate:/settings"
+        },
+        {
+          "kind": "button",
+          "label": "Race",
+          "icon": "speed",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Garage",
+          "icon": "directions_car",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "leaderboard",
+          "icon": "leaderboard",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Config",
+          "icon": "settings",
+          "action": "navigate",
+          "route": "/settings",
+          "expectedBehavior": "navigate:/settings"
+        },
+        {
+          "kind": "button",
+          "label": "GO_LIVE",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Sprint",
+          "icon": "bolt",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Upgrades",
+          "icon": "build",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Network",
+          "icon": "hub",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "RESUME",
+          "icon": "play_arrow",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "RESTART",
+          "icon": "refresh",
+          "action": "reset",
+          "expectedBehavior": "reset visible value/state, with confirmation if destructive"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "Race",
+          "icon": "speed",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "Garage",
+          "icon": "directions_car",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "leaderboard",
+          "icon": "leaderboard",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "Config",
+          "icon": "settings",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "Sprint",
+          "icon": "bolt",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "Upgrades",
+          "icon": "build",
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "Network",
+          "icon": "hub",
+          "active": true
+        }
+      ],
+      "title": "Gameplay - SignalSprint Lite"
+    },
+    "40ae98e29f2244eaa9178980a4267df9": {
+      "screenId": "40ae98e29f2244eaa9178980a4267df9",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "main",
+          "layout": "relative",
+          "classes": [
+            "relative",
+            "z-10",
+            "w-full",
+            "max-w-md",
+            "bg-surface-container-high/80",
+            "backdrop-blur-xl",
+            "hud-border",
+            "rounded-lg",
+            "p-panel-padding",
+            "shadow-[0_0_30px_rgba(0,0,0,0.8)]"
+          ],
+          "childCount": 18
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "Save Changes",
+          "classes": [
+            "w-full",
+            "bg-primary/10",
+            "border",
+            "border-primary",
+            "text-primary",
+            "font-hud-header",
+            "text-hud-header",
+            "py-3",
+            "px-4",
+            "uppercase",
+            "tracking-widest",
+            "hover:bg-primary/20",
+            "hover:shadow-[0_0_15px_rgba(47,217,244,0.4)]",
+            "transition-all",
+            "active:scale-[0.98]"
+          ],
+          "icon": null,
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "Back to Game",
+          "classes": [
+            "w-full",
+            "bg-transparent",
+            "border",
+            "border-outline/50",
+            "text-outline",
+            "font-stat-label",
+            "text-stat-label",
+            "py-2",
+            "px-4",
+            "uppercase",
+            "tracking-widest",
+            "hover:text-on-surface",
+            "hover:border-white/50",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "range",
+          "label": "velocity-slider",
+          "placeholder": "",
+          "name": "velocity-slider",
+          "classes": [
+            "w-full"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "checkbox",
+          "label": "checkbox",
+          "placeholder": "",
+          "name": "",
+          "classes": [
+            "sr-only",
+            "peer"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [],
+      "cards": [],
+      "icons": [
+        "music_note",
+        "volume_up",
+        "help"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "on-tertiary": "#1f3700",
+        "on-background": "#dae2fd",
+        "tertiary": "#a7f242",
+        "on-surface-variant": "#bbc9cd",
+        "primary-fixed-dim": "#2fd9f4",
+        "on-tertiary-fixed": "#102000",
+        "inverse-surface": "#dae2fd",
+        "on-primary": "#00363e",
+        "surface": "#0b1326",
+        "tertiary-fixed": "#acf847",
+        "outline": "#859397",
+        "on-tertiary-fixed-variant": "#304f00",
+        "on-secondary-fixed": "#3d0026",
+        "error-container": "#93000a",
+        "surface-container-high": "#222a3d",
+        "on-error-container": "#ffdad6",
+        "surface-container-highest": "#2d3449",
+        "error": "#ffb4ab",
+        "primary": "#8aebff",
+        "on-secondary-container": "#ff93c8",
+        "surface-container-lowest": "#060e20",
+        "secondary-fixed-dim": "#ffafd3",
+        "on-surface": "#dae2fd",
+        "secondary": "#ffafd3",
+        "tertiary-container": "#8cd523",
+        "on-error": "#690005",
+        "on-primary-fixed": "#001f25",
+        "on-secondary": "#620040",
+        "inverse-on-surface": "#283044",
+        "secondary-fixed": "#ffd8e7",
+        "on-primary-fixed-variant": "#004e5a",
+        "background": "#0b1326",
+        "tertiary-fixed-dim": "#91db2a",
+        "primary-fixed": "#a2eeff",
+        "surface-dim": "#0b1326",
+        "on-tertiary-container": "#355800",
+        "outline-variant": "#3c494c",
+        "on-primary-container": "#005763",
+        "primary-container": "#22d3ee",
+        "surface-container": "#171f33",
+        "surface-tint": "#2fd9f4",
+        "secondary-container": "#85145a",
+        "on-secondary-fixed-variant": "#85145a",
+        "surface-container-low": "#131b2e",
+        "surface-bright": "#31394d",
+        "inverse-primary": "#006877",
+        "surface-variant": "#2d3449"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Inter",
+        "JetBrains Mono"
+      ],
+      "layoutHints": {
+        "gridCols": 2,
+        "flexDirection": "col",
+        "gap": "4"
+      },
+      "behaviorContract": [
+        {
+          "kind": "button",
+          "label": "Save Changes",
+          "icon": null,
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "Back to Game",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "velocity-slider",
+          "type": "range",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "checkbox",
+          "type": "checkbox",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "Save Changes",
+          "icon": null,
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "Back to Game",
+          "icon": null,
+          "active": false
+        }
+      ],
+      "title": "Game Settings - SignalSprint Lite"
+    }
+  }
+}

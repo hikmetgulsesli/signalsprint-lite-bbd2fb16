@@ -1,0 +1,20 @@
+[
+  {
+    "screenId": "40ae98e29f2244eaa9178980a4267df9",
+    "name": "Game Settings - SignalSprint Lite",
+    "type": "settings",
+    "description": "Game Settings - SignalSprint Lite screen",
+    "surfaceIds": [
+      "SURF_GAME_SETTINGS"
+    ]
+  },
+  {
+    "screenId": "0227d11308b047af9448cca41bdad98b",
+    "name": "Gameplay - SignalSprint Lite",
+    "type": "game",
+    "description": "Gameplay - SignalSprint Lite screen",
+    "surfaceIds": [
+      "SURF_GAMEPLAY"
+    ]
+  }
+]

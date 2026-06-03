@@ -1,0 +1,24 @@
+[
+  {
+    "screenId": "40ae98e29f2244eaa9178980a4267df9",
+    "title": "Game Settings - SignalSprint Lite",
+    "htmlFile": "40ae98e29f2244eaa9178980a4267df9.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ6Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpZCiVodG1sXzFjNmYxNGFlNWVlZDRiNzBhMjAzODlhYTMwNTc4OTEwEgsSBxCN19Wi9xcYAZIBIgoKcHJvamVjdF9pZBIUQhI0NzU5NDA3NzUxNTc4NTcyMjM&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/signalsprint-lite-bbd2fb16/stitch/40ae98e29f2244eaa9178980a4267df9.html",
+    "surfaceIds": [
+      "SURF_GAME_SETTINGS"
+    ]
+  },
+  {
+    "screenId": "0227d11308b047af9448cca41bdad98b",
+    "title": "Gameplay - SignalSprint Lite",
+    "htmlFile": "0227d11308b047af9448cca41bdad98b.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ6Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpZCiVodG1sXzNkYmZhZDY0ZjVlMzRjYTY4YjE2OTcxNzAyN2Q1ZDE1EgsSBxCN19Wi9xcYAZIBIgoKcHJvamVjdF9pZBIUQhI0NzU5NDA3NzUxNTc4NTcyMjM&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/signalsprint-lite-bbd2fb16/stitch/0227d11308b047af9448cca41bdad98b.html",
+    "surfaceIds": [
+      "SURF_GAMEPLAY"
+    ]
+  }
+]
